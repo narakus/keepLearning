@@ -1,5 +1,5 @@
-// ConsoleApplication11.cpp: 定义控制台应用程序的入口点。
-//
+
+//用父类指针变量保存子类对象的地址，再用父类调用虚函数
 
 
 #include "stdafx.h"

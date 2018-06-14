@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>拖拽</title>
+</head>
+<body>
+
+<style>
+    * {margin: 0;padding: 0;list-style: none}
+    #div1 {
+        position: absolute;
+        width: 80px;
+        background: #CCC;
+        border:1px solid black;
+        display: none;
+    }
+</style>
+
+<div id="div1">
+    <ul>
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+    </ul>
+</div>
+
+
+<input type="text" id="txt1" />
+
+<script type="text/javascript">
+ 
+
+
+
+/*
+默认行为：return false;弹出自定义菜单 
+*/
+
+document.oncontextmenu=function(ev)
+{
+    var OEvent=ev||event;
+    var oDiv=document.getElementById('div1');
+
+    oDiv.style.display='block';
+    oDiv.style.left=OEvent.clientX+'px';
+    oDiv.style.top=OEvent.clientY+'px';
+    return false;
+};
+
+//右键隐藏
+document.onclick=function()
+{
+    var oDiv=document.getElementById('div1');
+    oDiv.style.display='none';
+}
+
+</script>
+
+</body>
+</html>

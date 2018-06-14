@@ -1,0 +1,60 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <title></title>
+ </head>
+ <body>
+
+    <input type="text" id="txt1" />
+    <input id="btn1" type="button" value="创建元素" />
+    <ul id="u1">
+        
+    </ul>
+
+ <script type="text/javascript">
+
+/*
+创建DOM元素
+createElement(标签名)
+appendChild(节点)
+
+插入DOM元素
+insertBefore(节点，原有节点)
+
+删除DOM元素
+removeChild(节点)
+
+ 文档碎片
+ 文档碎片可以提高DOM操作性能（理论上）
+ 文档碎片原理
+ document.createDocumentFragment()
+ */
+
+var oBtn=document.getElementById('btn1');
+var oU1=document.getElementById('u1');
+var oTxt=document.getElementById('txt1');
+
+oBtn.onclick=function()
+{
+    var oLi=document.createElement('li');
+    oLi.innerHTML=oTxt.value;
+
+    //父级.appendChild(子节点);
+    //oU1.appendChild(oLi);
+
+    //在之前插入
+    var aLi=document.getElementsByTagName('li');
+    if(aLi.length!=0)
+    {
+        oU1.insertBefore(oLi, aLi[0]);
+    }
+    else
+    {
+        oU1.appendChild(oLi);
+    }
+
+}
+
+ </script>
+ </body>
+ </html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>offset parent</title>
+</head>
+<body>
+<style type="text/css">
+    #div1 {width: 200px;height: 200px;background: #CCC;position: relative;margin: 100px;}
+    #div2 {width: 100px;height: 100px;background: red;position: absolute;left:50px;
+        top:50px;}
+</style>
+
+<div id="div1">
+    <div id="div2">
+        
+    </div>
+</div>
+<script type="text/javascript">
+    /*offset parment 获取定位的父节点
+    firstChild  (包含文本节点和元素节点)  firstElementChild 
+    lastChild                             lastChildElementChild
+    nextSibling  下一个兄弟节点           nextSiblingElementChild
+    previouSibing 上一个兄弟节点          nexPreviouSibingChild
+
+    */
+    var oDiv2=document.getElementById("div2");
+    alert(oDiv2.offsetParent);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>运动</title>
+<style type="text/css">
+    #div1  {width:200px;background: red; height: 200px; position: absolute;top:50px;left: 0px;}
+</style> 
+</head>
+<body>
+<div id="div1" ></div>
+<input id="btn1"  type="button"  onclick="startMove()"  value="开始运动" />
+
+
+<script type="text/javascript">
+var timer=null;
+var speed=10; //控制物体速度
+function startMove()
+{
+    var oDiv=document.getElementById('div1');
+    clearInterval(timer); //保证只有一个定时器工作
+    timer=setInterval(function(){
+        if(oDiv.offsetLeft>=300)
+        {
+            clearInterval(timer);
+        }
+        else
+        {
+        oDiv.style.left=oDiv.offsetLeft+speed+'px';
+        }
+    },30);
+}
+
+//匀速运动
+//运动框架 1.开始运动时关闭已有定时器，2把运动和停止隔开（if/else）
+
+
+</script>
+
+</body>
+</html>

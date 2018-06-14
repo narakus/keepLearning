@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>表格搜索</title>
+</head>
+<body>
+    <input id="txt1" type="text" />
+    <input id="btn1" type="button" value="搜索" />
+    <table id="tab1" border="1" width="500">
+    <thead>
+        <td>ID</td>
+        <td>NAME</td>
+        <td>AGE</td>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>李四</td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>王五</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>张伟</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>张丹</td>
+            <td>19</td>
+        </tr>
+    </tbody>
+</table>
+
+<script type="text/javascript">
+window.onload=function()
+{
+    var oTab=document.getElementById("tab1");
+    var oTxt=document.getElementById("txt1");
+    var oBtn=document.getElementById("btn1");
+
+    oBtn.onclick=function()
+    {
+        for(var i=0;i<oTab.tBodies[0].rows.length;i++);
+        {   
+            //toLowerCase 转换为全小写形式
+            var sTab=oTab.tBodies[0].rows[i].cells[1].innerHTML.toLowerCase();
+            var sTxt=oTxt.value.toLowerCase();
+            oTab.tBodies.rows[i].style.background='';
+
+            var arr=sTxt.split(" ");
+            oTab.tBodies[0].rows[i].style.display='none';
+            for(var j=0;j<arr.length;j++)
+            {
+                if(sTab.search(sTxt)!=-1)
+                {
+//                    oTab.tBodies.rows[j].style.background='#yellow';
+                    oTab.tBodies.rows[j].style.background='#block';
+                }
+            }
+        }
+    }
+} 
+
+//获取:tBodies rows cells tHead tFood
+//隔行变色 ，移入高亮
+//dom 添加，删除
+//搜索  字符串查找，split，大小写转换，高亮，筛选
+
+
+
+
+
+</script>
+</body>
+</html>

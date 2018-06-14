@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test</title>
+</head>
+<body>
+<input type="button" id="btn1" value="按钮">
+<script type="text/javascript">
+
+/*
+attachEvent(事件名称，函数)   绑定事件
+detachEvent(事件名称，函数)  解除绑定
+
+DOM方式：
+addEventListener(事件名称，函数，捕获)
+removeEventListener(事件名称，函数，捕获)
+/*
+
+
+    oBtn = document.getElementById('btn1');
+
+/*
+    if(oBtn.attachEvent)
+    {
+        oBtn.attachEvent('onclick',function ()
+        {
+            alert('a');
+        })
+    }
+    else
+    {
+        oBtn.addEventListener('click',function()
+        {
+            alert('a'); 
+        })
+    }
+*/
+
+function myAddEvent(obj,ev,fn)
+{
+    if(obj.attachEvent)
+    {
+        obj.attachEvent('on'+ev,fn);
+    }
+    else
+    {
+        obj.addEventListener(ev,fn);
+    }
+}
+
+myAddEvent(oBtn,'click',function(){
+    alert('abc');
+})
+
+
+</script>
+</body>
+</html>

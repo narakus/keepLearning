@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>删除DOM元素</title>
+</head>
+<body>
+
+
+<ul id="ul1">
+    <li>lallalala<a href="javascript:;">隐藏</a></li>
+    <li>hahahahaa<a href="javascript:;">隐藏</a></li>
+    <li>666666666<a href="javascript:;">隐藏</a></li>
+    <li>ddddddddd<a href="javascript:;">隐藏</a></li>
+    <li>fffffffff<a href="javascript:;">隐藏</a></li>
+    <li>ggggggggg<a href="javascript:;">隐藏</a></li>
+</ul>
+
+<script type="text/javascript">
+window.onload=function()
+{
+    var oUl=document.getElementById("ul1");
+    var Ali=document.getElementsByTagName('a');
+    for(var i=0;i<Ali.length;i++)
+    {
+        Ali[i].onclick=function()
+        {
+            oUl.removeChild(this.parentNode);
+        }
+    }
+}
+
+
+</script>
+
+</body>
+</html>

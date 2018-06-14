@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM基础</title>
+</head>
+<body>
+<script type="text/javascript">
+    /*
+    元素属性操作方式：
+    oDiv.style.display = "block";
+    oDiv.style["display"] = "block"
+
+    DOM方式操作元素属性
+    getAttribute(名称)
+    setAttribute(名称、值)
+    删除:
+    removeAttribute(名称)
+
+    灵活的获取元素
+    getElementById
+    getElementsByTagName
+    */
+
+window.onload=function()
+{
+    //DOM子节点事例
+    var oUl=document.getElementById("ull");
+    //alert(oUl.childNodes.length);
+    /*
+    for(var i=0;i<oUl.childNodes.length;i++)
+    {
+        //nodeType==3  -> 文本节点 ;
+        //nodeType==1  -> 元素节点 ;
+        if(oUl.childNodes[i].nodeType==1)
+        {
+            oUl.childNodes[i].style.background='red'; 
+        }
+    }
+    */
+    for(var i=0;i<oUl.children.length;i++)
+    {
+        oUl.children[i].style.background='blue'; 
+    }
+
+}
+
+</script>
+
+<ul id="ull">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    
+</ul>
+
+</body>
+</html>
